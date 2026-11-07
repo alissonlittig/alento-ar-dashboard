@@ -1,0 +1,54 @@
+:root { --bg:#0a141b; --panel:#0f1f29; --line:#1d3441; --txt:#e6f1f5; --mut:#8fa9b5; --acc:#5eead4; font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif; color-scheme: dark; }
+* { box-sizing: border-box; margin: 0; }
+html { background: var(--bg); }
+body { color: var(--txt); min-height: 100vh; background: radial-gradient(1100px 500px at 85% -10%, #12384a 0%, transparent 60%), radial-gradient(800px 400px at -10% 10%, #0f2e2b 0%, transparent 55%), var(--bg); line-height: 1.45; overflow-x: hidden; }
+.top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; max-width:1180px; margin:0 auto; padding:22px 20px 8px; }
+.brand { display:flex; gap:12px; align-items:center; }
+.brand b { font-size:1.25rem; letter-spacing:.02em; display:block; }
+.brand span { color:var(--mut); font-size:.82rem; }
+.src { color:var(--mut); font-size:.78rem; }
+main { max-width:1180px; margin:0 auto; padding:8px 20px 24px; }
+.load,.err { min-height:100vh; padding:60px 0; text-align:center; color:var(--mut); }
+.err { color:#f87171; }
+.chips { display:flex; gap:8px; overflow-x:auto; padding:10px 0 14px; scrollbar-width:none; }
+.chips::-webkit-scrollbar { display:none; }
+.chips button { flex:none; background:var(--panel); color:var(--mut); border:1px solid var(--line); border-radius:999px; padding:9px 16px; font:inherit; font-size:.88rem; cursor:pointer; transition:.15s; }
+.chips button:hover { color:var(--txt); border-color:#2f5568; }
+.chips button.on { background:var(--acc); color:#06231f; border-color:var(--acc); font-weight:600; }
+button:focus-visible { outline:2px solid var(--acc); outline-offset:2px; }
+.hero { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr); gap:16px; margin-bottom:16px; }
+.aqi { background:linear-gradient(160deg, color-mix(in srgb, var(--c) 18%, var(--panel)), var(--panel) 70%); border:1px solid color-mix(in srgb, var(--c) 40%, var(--line)); border-radius:20px; padding:22px; }
+.aqi small { color:var(--mut); font-size:.82rem; }
+.big { font-size:5rem; font-weight:700; line-height:1; margin:10px 0 12px; color:var(--c); font-variant-numeric:tabular-nums; }
+.big span { font-size:.95rem; color:var(--mut); font-weight:500; margin-left:10px; }
+.pill { display:inline-flex; align-items:center; gap:8px; background:#00000040; padding:6px 12px; border-radius:999px; font-size:.88rem; }
+.pill i { width:9px; height:9px; border-radius:50%; background:var(--c); }
+.kpis { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.kpis div { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:16px 18px; display:flex; flex-direction:column; justify-content:center; }
+.kpis small { color:var(--mut); font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; }
+.kpis b { font-size:1.7rem; font-variant-numeric:tabular-nums; }
+.kpis em { font-style:normal; color:var(--mut); font-size:.8rem; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:18px 18px 14px; min-width:0; }
+.wide { grid-column:1/-1; }
+.card h2 { font-size:1rem; font-weight:600; margin-bottom:12px; display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; }
+.card h2 small { color:var(--mut); font-weight:400; font-size:.78rem; }
+.h { height:280px; } .h.s { height:230px; }
+.scroll { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:.92rem; font-variant-numeric:tabular-nums; }
+th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); white-space:nowrap; }
+th button { background:none; border:0; color:var(--mut); font:inherit; font-size:.78rem; text-transform:uppercase; letter-spacing:.07em; cursor:pointer; padding:0; }
+th button:hover { color:var(--txt); }
+tbody tr { cursor:pointer; transition:background .12s; }
+tbody tr:hover,tbody tr.on { background:#16303d; }
+td small { color:var(--mut); }
+.dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:8px; }
+.up { color:#fb923c; } .down { color:#4ade80; }
+footer { max-width:1180px; margin:0 auto; padding:10px 20px 40px; color:var(--mut); font-size:.78rem; }
+footer a { color:var(--acc); }
+@media (max-width:760px) {
+  .hero,.grid { grid-template-columns:1fr; }
+  .big { font-size:4rem; }
+  .h { height:240px; }
+  main,.top,footer { padding-left:14px; padding-right:14px; }
+}
